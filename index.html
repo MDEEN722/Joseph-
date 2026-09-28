@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>St. Joseph's Minor Seminary — Student Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="school-logo.jpg" alt="St. Joseph's Minor Seminary logo">
+      <div>
+        <h1>ST. JOSEPH'S MINOR SEMINARY</h1>
+        <p>GHBAZHI, BAZZA, ADAMAWA STATE</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="loginPage" class="card login-card">
+      <div class="welcome">
+        <img src="school-logo.jpg" alt="School logo">
+        <h2>Student Result Portal</h2>
+        <p>Check your academic results securely.</p>
+      </div>
+
+      <form id="loginForm">
+        <label for="studentId">Student ID Number</label>
+        <input id="studentId" required placeholder="e.g. SJS001">
+
+        <label for="studentClass">Class</label>
+        <select id="studentClass" required>
+          <option value="">Select class</option>
+          <option>JSS 1</option><option>JSS 2</option><option>JSS 3</option>
+          <option>SS 1</option><option>SS 2</option><option>SS 3</option>
+        </select>
+
+        <label for="password">Password</label>
+        <input id="password" type="password" required placeholder="Enter password">
+
+        <button type="submit">Login & Check Result</button>
+        <p id="loginMsg" class="message"></p>
+      </form>
+
+      <button id="teacherBtn" class="secondary">Teacher / Admin Login</button>
+    </section>
+
+    <section id="studentPage" class="hidden">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">STUDENT PORTAL</p>
+          <h2 id="studentTitle"></h2>
+        </div>
+        <button class="secondary" onclick="logout()">Logout</button>
+      </div>
+      <div class="card">
+        <div class="student-meta" id="studentMeta"></div>
+        <div id="resultArea"></div>
+      </div>
+    </section>
+
+    <section id="teacherPage" class="hidden">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">TEACHER / ADMIN</p>
+          <h2>Upload Student Result</h2>
+        </div>
+        <button class="secondary" onclick="logout()">Logout</button>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Student details</h3>
+          <form id="resultForm">
+            <label>Student ID</label>
+            <input id="rId" required placeholder="e.g. SJS001">
+            <label>Student Name</label>
+            <input id="rName" required placeholder="Full name">
+            <label>Class</label>
+            <select id="rClass" required>
+              <option value="">Select class</option>
+              <option>JSS 1</option><option>JSS 2</option><option>JSS 3</option>
+              <option>SS 1</option><option>SS 2</option><option>SS 3</option>
+            </select>
+            <label>Password</label>
+            <input id="rPassword" required placeholder="Student login password">
+
+            <h3>Subjects & scores</h3>
+            <div id="subjects"></div>
+            <button type="submit">Save / Upload Result</button>
+            <p id="saveMsg" class="message"></p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Saved students</h3>
+          <div id="studentList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 St. Joseph's Minor Seminary, Ghbazhi, Bazza, Adamawa State</footer>
+  <script src="script.js"></script>
+</body>
+</html>
